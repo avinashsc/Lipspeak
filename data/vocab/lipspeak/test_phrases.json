@@ -1,0 +1,10 @@
+{"call_an_ambulance":{"1_gram":["ambulance"]},
+ "allergic_to_animals":{"1_gram":["animal"]},
+ "carry_my_groceries":{"1_gram":["grocery"]},
+ "difficulty_breathing":{"1_gram":["breathe"]},
+ "problem_sleeping":{"1_gram":["sleep"]},
+ "open_the_window":{"1_gram":["window"]},
+ "this_is_uncomfortable":{"1_gram":["uncomfortable"]},
+ "feeling_tired":{"1_gram":["tire"]},
+ "pain_when_swallow":{"1_gram":["swallow"]},
+ "condition_improved":{"1_gram":["improve"]}}

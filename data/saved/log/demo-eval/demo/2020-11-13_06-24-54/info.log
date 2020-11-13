@@ -1,0 +1,76 @@
+2020-11-13 06:24:59,269 - test - INFO - Finished loading ckpt in 4.182s
+2020-11-13 06:24:59,331 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-13 06:25:03,795 - test - INFO - Finished saving raw video in 0.021s
+2020-11-13 06:25:04,734 - test - INFO - Finished resizing video in 0.939s
+2020-11-13 06:25:04,769 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:29: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-13 06:25:04,771 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py:162: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-11-13 06:25:04,916 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/util/tf_util.py:29: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-11-13 06:25:04,943 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/resnet.py:87: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+2020-11-13 06:25:05,795 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:219: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2020-11-13 06:25:05,914 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:281: dropout (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+2020-11-13 06:25:05,939 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:318: conv1d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv1d instead.
+2020-11-13 06:25:09,991 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:264: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+2020-11-13 06:25:10,020 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:271: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-13 06:25:10,588 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-11-13 06:25:10,589 - tensorflow - INFO - Restoring parameters from models/lrs2_lip_model/model_epoch_12_gs_110004
+2020-11-13 06:25:12,445 - test - INFO - Finished extracting features in 7.711s
+2020-11-13 06:25:12,447 - test - INFO - Finished dataset loading in 0.001s
+2020-11-13 06:25:12,641 - test - INFO - Finished words creation in 0.194s
+2020-11-13 06:25:12,788 - test - INFO - Finished transform batch in 0.009s
+2020-11-13 06:25:12,794 - test - INFO - Finished phoneme tensor creation in 0.005s
+2020-11-13 06:25:14,253 - test - INFO - Finished model invocation in 1.457s
+2020-11-13 06:25:14,443 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:14,445 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:15,722 - test - INFO - Finished model invocation in 1.275s
+2020-11-13 06:25:15,915 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:15,917 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:17,126 - test - INFO - Finished model invocation in 1.208s
+2020-11-13 06:25:17,314 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:17,317 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:18,535 - test - INFO - Finished model invocation in 1.217s
+2020-11-13 06:25:18,723 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:18,725 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:20,031 - test - INFO - Finished model invocation in 1.304s
+2020-11-13 06:25:20,221 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:20,223 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:21,411 - test - INFO - Finished model invocation in 1.186s
+2020-11-13 06:25:21,598 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:21,600 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:23,007 - test - INFO - Finished model invocation in 1.406s
+2020-11-13 06:25:23,216 - test - INFO - Finished transform batch in 0.006s
+2020-11-13 06:25:23,218 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:24,418 - test - INFO - Finished model invocation in 1.198s
+2020-11-13 06:25:24,614 - test - INFO - Finished transform batch in 0.006s
+2020-11-13 06:25:24,616 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:25,844 - test - INFO - Finished model invocation in 1.226s
+2020-11-13 06:25:26,031 - test - INFO - Finished transform batch in 0.005s
+2020-11-13 06:25:26,033 - test - INFO - Finished phoneme tensor creation in 0.002s
+2020-11-13 06:25:27,339 - test - INFO - Finished model invocation in 1.305s
+2020-11-13 06:25:27,388 - test - INFO - Finished KWS in 1.354s
+2020-11-13 06:25:27,390 - test - INFO - Finished evaluating KWS model in 14.944s
+2020-11-13 06:25:27,392 - werkzeug - INFO - 172.31.32.238 - - [13/Nov/2020 06:25:27] "[37mPOST /predict HTTP/1.1[0m" 200 -

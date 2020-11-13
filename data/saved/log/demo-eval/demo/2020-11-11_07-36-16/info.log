@@ -1,0 +1,4 @@
+2020-11-11 07:36:20,027 - test - INFO - Finished loading ckpt in 3.713s
+2020-11-11 07:36:20,115 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-11 07:36:29,826 - werkzeug - INFO - 172.31.32.238 - - [11/Nov/2020 07:36:29] "[33mPOST / HTTP/1.1[0m" 404 -
+2020-11-11 07:36:40,227 - werkzeug - INFO - 172.31.32.238 - - [11/Nov/2020 07:36:40] "[37mPOST /video HTTP/1.1[0m" 200 -

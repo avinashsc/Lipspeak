@@ -1,0 +1,50 @@
+2020-11-12 05:18:29,003 - test - INFO - Finished loading ckpt in 3.820s
+2020-11-12 05:18:29,084 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-12 05:20:07,909 - test - INFO - Finished saving raw video in 0.016s
+2020-11-12 05:20:08,831 - test - INFO - Finished resizing video in 0.922s
+2020-11-12 05:20:08,865 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:29: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-12 05:20:08,867 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py:162: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-11-12 05:20:09,010 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/util/tf_util.py:29: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-11-12 05:20:09,038 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/resnet.py:87: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+2020-11-12 05:20:09,869 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:219: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2020-11-12 05:20:09,977 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:281: dropout (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+2020-11-12 05:20:09,999 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:318: conv1d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv1d instead.
+2020-11-12 05:20:13,636 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:264: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+2020-11-12 05:20:13,664 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:271: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-12 05:20:14,176 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-11-12 05:20:14,177 - tensorflow - INFO - Restoring parameters from models/lrs2_lip_model/model_epoch_12_gs_110004
+2020-11-12 05:20:15,887 - test - INFO - Finished extracting features in 7.055s
+2020-11-12 05:20:29,648 - test - INFO - Finished evaluating KWS model in 13.761s
+2020-11-12 05:20:29,650 - werkzeug - INFO - 172.31.32.238 - - [12/Nov/2020 05:20:29] "[37mPOST /predict HTTP/1.1[0m" 200 -
+2020-11-12 05:23:17,211 - werkzeug - INFO - 54.85.218.148 - - [12/Nov/2020 05:23:17] "[31m[1mGET /predict HTTP/1.1[0m" 400 -
+2020-11-12 05:25:32,154 - test - INFO - Finished saving raw video in 0.017s
+2020-11-12 05:25:33,196 - test - INFO - Finished resizing video in 1.042s
+2020-11-12 05:25:38,452 - tensorflow - INFO - Restoring parameters from models/lrs2_lip_model/model_epoch_12_gs_110004
+2020-11-12 05:25:39,349 - test - INFO - Finished extracting features in 6.153s
+2020-11-12 05:25:53,336 - test - INFO - Finished evaluating KWS model in 13.986s
+2020-11-12 05:25:53,338 - werkzeug - INFO - 172.31.32.238 - - [12/Nov/2020 05:25:53] "[37mPOST /predict HTTP/1.1[0m" 200 -

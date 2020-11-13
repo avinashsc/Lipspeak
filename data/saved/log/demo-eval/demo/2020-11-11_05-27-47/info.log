@@ -1,0 +1,137 @@
+2020-11-11 05:27:47,916 - test - INFO - Running evaluation with configuration:
+2020-11-11 05:27:47,916 - test - INFO - {'_args': Namespace(config='./configs/demo/eval.json', device=None, resume='./misc/pretrained_models/KWS_Net.pth'),
+ '_config': OrderedDict([('name', 'demo'),
+                         ('n_gpu', 1),
+                         ('seed', 0),
+                         ('arch',
+                          OrderedDict([('type', 'KWSModel'),
+                                       ('args',
+                                        OrderedDict([('hiddenDNNV', 128),
+                                                     ('dimRnn3', 16),
+                                                     ('inputDimV', 512),
+                                                     ('hiddenDimV', 256),
+                                                     ('birnnV', True),
+                                                     ('d_word_emb', 128),
+                                                     ('outdpV', 0.2),
+                                                     ('p_size', 73),
+                                                     ('g_size', 34),
+                                                     ('d_embed', 64),
+                                                     ('d_hidden', 500),
+                                                     ('embDO', 0),
+                                                     ('beam_size', 3),
+                                                     ('num_heads', 1),
+                                                     ('rnn2', False),
+                                                     ('fixed_length_embedding',
+                                                      False),
+                                                     ('shortcut', True),
+                                                     ('loc_acc', False),
+                                                     ('g2p', False)]))])),
+                         ('dataset',
+                          OrderedDict([('type', 'DatasetV'),
+                                       ('args',
+                                        OrderedDict([('dataset_name', 'lrs'),
+                                                     ('split', 'test'),
+                                                     ('cmu_dict_path',
+                                                      'data/vocab/cmudict.dict'),
+                                                     ('vis_feat_dir',
+                                                      ['data/demo/features',
+                                                       '']),
+                                                     ('data_struct_path',
+                                                      'data/demo/Dsplitsdemo.json'),
+                                                     ('num_phoneme_thr', 6),
+                                                     ('field_vocab_paths',
+                                                      OrderedDict([('graphemes',
+                                                                    'data/vocab/grapheme_field_vocab.json'),
+                                                                   ('phonemes',
+                                                                    'data/vocab/phoneme_field_vocab.json')])),
+                                                     ('num_words',
+                                                      135091)]))])),
+                         ('data_loader',
+                          OrderedDict([('args',
+                                        OrderedDict([('batch_size', 1),
+                                                     ('shuffle', False),
+                                                     ('drop_last', False),
+                                                     ('pin_memory', True),
+                                                     ('num_workers', 4),
+                                                     ('start_BEloc_epoch',
+                                                      200)]))])),
+                         ('tester',
+                          OrderedDict([('save_dir', 'data/saved/'),
+                                       ('verbosity', 2)])),
+                         ('localisation', OrderedDict([('loc_loss', True)]))]),
+ '_exper_name': 'demo-eval',
+ '_experiment_name': 'demo',
+ '_log_dir': PosixPath('data/saved/log/demo-eval/demo/2020-11-11_05-27-47'),
+ '_save_dir': PosixPath('data/saved/models/demo-eval/demo/2020-11-11_05-27-47'),
+ '_web_log_dir': PosixPath('data/saved/web/demo-eval/demo/2020-11-11_05-27-47'),
+ 'cfg_fname': PosixPath('configs/demo/eval.json'),
+ 'log_levels': {0: 30, 1: 20, 2: 10},
+ 'log_path': None,
+ 'resume': PosixPath('misc/pretrained_models/KWS_Net.pth')}
+2020-11-11 05:27:48,012 - test - INFO - KWSModel(
+  (classifier_init): Classifier_init(
+    (rnn1): LSTM(512, 256, batch_first=True, bidirectional=True)
+    (linrnn): Linear(in_features=512, out_features=256, bias=True)
+    (rnn2): LSTM(512, 256, batch_first=True, bidirectional=True)
+    (inBN): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (lin_logits): Conv1d(128, 1, kernel_size=(1,), stride=(1,))
+    (rnnBN): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (wBN): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (outProj_L0): Linear(in_features=512, out_features=128, bias=True)
+    (outDO_L0): Dropout(p=0.2, inplace=False)
+    (DNNnonlinear_L0): LeakyReLU(negative_slope=0.01)
+    (DNNnonlinear_L1): LeakyReLU(negative_slope=0.01)
+    (DNNnonlinear_L2): LeakyReLU(negative_slope=0.01)
+    (outProj_L1): Linear(in_features=128, out_features=64, bias=True)
+    (outDO_L1): Dropout(p=0.2, inplace=False)
+    (outProj_L2): Linear(in_features=64, out_features=1, bias=True)
+    (enc_dec): G2P(
+      (decoder): Decoder(
+        (embedding): Embedding(34, 64)
+        (lstm): LSTMCell(64, 500)
+        (linear): Linear(in_features=500, out_features=34, bias=True)
+        (JHCE2h): Linear(in_features=128, out_features=500, bias=True)
+        (JHCE2c): Linear(in_features=128, out_features=500, bias=True)
+      )
+      (encoder): Encoder(
+        (embedding): Embedding(73, 64)
+        (lstm): LSTM(64, 500, batch_first=True, bidirectional=True)
+        (JHCE): Linear(in_features=1000, out_features=128, bias=True)
+        (linear): Linear(in_features=1000, out_features=500, bias=True)
+        (linear_2): Linear(in_features=1000, out_features=500, bias=True)
+      )
+    )
+    (linear_attn_keys): Linear(in_features=256, out_features=512, bias=True)
+    (linear_attn_values): Linear(in_features=384, out_features=512, bias=True)
+    (linear_attn_queries): Linear(in_features=128, out_features=512, bias=True)
+    (linear_mask): Linear(in_features=1, out_features=512, bias=True)
+    (final_lin): Linear(in_features=512, out_features=512, bias=True)
+    (conv3): Conv2d(1, 32, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (conv1): Conv2d(64, 128, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2))
+    (conv2): Conv2d(128, 256, kernel_size=(5, 5), stride=(1, 2), padding=(2, 2))
+    (batch1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (max_pool): MaxPool2d(kernel_size=2, stride=(1, 2), padding=0, dilation=1, ceil_mode=False)
+    (batch2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (batch3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (dropout): Dropout(p=0.2, inplace=False)
+    (fc1): Linear(in_features=256, out_features=512, bias=True)
+    (fc2): Linear(in_features=512, out_features=128, bias=True)
+    (fc3): Linear(in_features=128, out_features=1, bias=True)
+    (softmax): LogSoftmax()
+    (linear_conv): Linear(in_features=1, out_features=1, bias=True)
+    (project_query): Linear(in_features=512, out_features=32, bias=True)
+    (linear_baseline): Linear(in_features=384, out_features=512, bias=True)
+    (linear_shortcut): Linear(in_features=128, out_features=1, bias=True)
+  )
+  (classifier_BE): Classifier_BE(
+    (DNNnonlinear_L1): LeakyReLU(negative_slope=0.01)
+    (outProj_L1): Linear(in_features=128, out_features=16, bias=True)
+    (BEBN): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (rnn3): LSTM(16, 16, batch_first=True, bidirectional=True)
+    (linRnn3): Linear(in_features=32, out_features=1, bias=True)
+    (FBN): BatchNorm1d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+)
+Trainable parameters: 10141457
+2020-11-11 05:27:48,020 - test - INFO - Loading checkpoint: misc/pretrained_models/KWS_Net.pth ...
+2020-11-11 05:27:51,749 - test - INFO - Finished loading ckpt in 3.730s

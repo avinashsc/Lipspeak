@@ -1,0 +1,23 @@
+2020-11-11 07:37:18,236 - test - INFO - Finished loading ckpt in 3.830s
+2020-11-11 07:37:18,260 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-11 07:37:19,135 - app - ERROR - Exception on /video [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 102, in video
+    video_alignment_resizing()
+  File "app.py", line 323, in video_alignment_resizing
+    processed_frame = cv2.resize(processed_frame, (160, 160))
+cv2.error: OpenCV(4.4.0) /tmp/pip-req-build-cg56sov1/opencv/modules/imgproc/src/resize.cpp:3929: error: (-215:Assertion failed) !ssize.empty() in function 'resize'
+
+2020-11-11 07:37:19,136 - werkzeug - INFO - 172.31.32.238 - - [11/Nov/2020 07:37:19] "[35m[1mPOST /video HTTP/1.1[0m" 500 -

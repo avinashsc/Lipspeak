@@ -1,0 +1,40 @@
+2020-11-11 19:06:52,153 - test - INFO - Finished loading ckpt in 6.984s
+2020-11-11 19:06:52,242 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-11 19:07:17,347 - werkzeug - INFO - 172.31.32.238 - - [11/Nov/2020 19:07:17] "[31m[1mPOST /predict HTTP/1.1[0m" 400 -
+2020-11-11 19:09:20,382 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:29: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-11 19:09:20,383 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py:162: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-11-11 19:09:20,542 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/util/tf_util.py:29: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-11-11 19:09:20,569 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/resnet.py:87: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+2020-11-11 19:09:21,405 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:219: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2020-11-11 19:09:21,509 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:281: dropout (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+2020-11-11 19:09:21,531 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:318: conv1d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv1d instead.
+2020-11-11 19:09:25,263 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:264: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+2020-11-11 19:09:25,298 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:271: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-11 19:09:25,828 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-11-11 19:09:25,829 - tensorflow - INFO - Restoring parameters from models/lrs2_lip_model/model_epoch_12_gs_110004
+2020-11-11 19:09:47,035 - werkzeug - INFO - 172.31.32.238 - - [11/Nov/2020 19:09:47] "[37mPOST /predict HTTP/1.1[0m" 200 -

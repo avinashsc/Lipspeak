@@ -1,0 +1,78 @@
+2020-11-12 05:07:36,606 - test - INFO - Finished loading ckpt in 6.550s
+2020-11-12 05:07:36,686 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-12 05:08:35,531 - test - INFO - Finished saving raw video in 0.024s
+2020-11-12 05:08:35,986 - test - INFO - Finished saving raw video in 0.016s
+2020-11-12 05:08:36,618 - test - INFO - Finished resizing video in 1.087s
+2020-11-12 05:08:36,688 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:29: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-12 05:08:36,690 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/ops/tensor_array_ops.py:162: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+2020-11-12 05:08:36,903 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/util/tf_util.py:29: batch_normalization (from tensorflow.python.layers.normalization) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.batch_normalization instead.
+2020-11-12 05:08:36,936 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/resnet.py:87: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+2020-11-12 05:08:37,117 - test - INFO - Finished resizing video in 1.131s
+2020-11-12 05:08:38,497 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:219: dense (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dense instead.
+2020-11-12 05:08:38,741 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:281: dropout (from tensorflow.python.layers.core) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.dropout instead.
+2020-11-12 05:08:38,789 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/modules.py:318: conv1d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv1d instead.
+2020-11-12 05:08:47,153 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:264: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See `tf.nn.softmax_cross_entropy_with_logits_v2`.
+
+2020-11-12 05:08:47,220 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/lip_model/training_graph.py:271: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+2020-11-12 05:08:48,002 - tensorflow - WARNING - From /home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1266: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+2020-11-12 05:08:48,003 - tensorflow - INFO - Restoring parameters from models/lrs2_lip_model/model_epoch_12_gs_110004
+2020-11-12 05:08:48,231 - tensorflow - INFO - Restoring parameters from models/lrs2_lip_model/model_epoch_12_gs_110004
+2020-11-12 05:08:51,632 - server - ERROR - Exception on /predict [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "server.py", line 87, in predict
+    evaluate_model()
+  File "server.py", line 378, in evaluate_model
+    tb_writer = tb_writer,
+  File "server.py", line 392, in validation_loop
+    v_names = write_query_file(feature_dir)
+  File "server.py", line 548, in write_query_file
+    shutil.rmtree(feature_dir, ignore_errors = False)
+  File "/home/ubuntu/anaconda3/lib/python3.7/shutil.py", line 494, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/home/ubuntu/anaconda3/lib/python3.7/shutil.py", line 432, in _rmtree_safe_fd
+    _rmtree_safe_fd(dirfd, fullname, onerror)
+  File "/home/ubuntu/anaconda3/lib/python3.7/shutil.py", line 452, in _rmtree_safe_fd
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "/home/ubuntu/anaconda3/lib/python3.7/shutil.py", line 450, in _rmtree_safe_fd
+    os.unlink(entry.name, dir_fd=topfd)
+FileNotFoundError: [Errno 2] No such file or directory: 'demo.mp4.npy'
+2020-11-12 05:08:51,638 - werkzeug - INFO - 172.31.32.238 - - [12/Nov/2020 05:08:51] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+2020-11-12 05:08:52,363 - test - INFO - Finished extracting features in 15.745s
+2020-11-12 05:09:06,480 - test - INFO - Finished evaluating KWS model in 14.116s
+2020-11-12 05:09:06,482 - werkzeug - INFO - 172.31.32.238 - - [12/Nov/2020 05:09:06] "[37mPOST /predict HTTP/1.1[0m" 200 -

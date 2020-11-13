@@ -1,0 +1,24 @@
+2020-11-11 07:51:36,485 - test - INFO - Finished loading ckpt in 3.720s
+2020-11-11 07:51:36,540 - werkzeug - INFO -  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2020-11-11 07:51:40,936 - app - ERROR - Exception on /video [POST]
+Traceback (most recent call last):
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ubuntu/w210/FinalProject/kws/lib/python3.7/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 103, in video
+    evaluate_model()
+  File "app.py", line 339, in evaluate_model
+    val_g, val_epoch_size, chars, sess, val_gen = init_models_and_data(istrain=0)
+  File "app.py", line 424, in init_models_and_data
+    print(f"[DEBUG] The content of config.gpu_id: {config.gpu_id}")
+AttributeError: 'ConfigParser' object has no attribute 'gpu_id'
+2020-11-11 07:51:40,938 - werkzeug - INFO - 172.31.32.238 - - [11/Nov/2020 07:51:40] "[35m[1mPOST /video HTTP/1.1[0m" 500 -
