@@ -78,6 +78,50 @@ def predict():
     file.save('media/lipspeak/raw_videos/demo.mp4')
     print("Lipspeak: File saved at: 'media/lipspeak/raw_videos/demo.mp4'")
     logger.info(f"Finished saving raw video in {time.time() - tic:.3f}s")
+
+    #https://stackoverflow.com/questions/47679227/using-python-to-send-json-and-files-to-flask
+    tic = time.time()
+    print("Processing Phrasebook")
+    queries = json.loads(request.form['phrasebook'])
+    #print("DEBUG: queries is", queries)
+    #for key, value in queries.items():
+    #    print(key, '--')
+    #    print(value)
+
+    #print(request.form.get('phrasebook'))
+    #result = request.form.to_dict()
+    with open('data/vocab/lipspeak/testphrases.json') as json_file: 
+        phrases = json.load(json_file) 
+    #phrases = json.load("data/vocab/lipspeak/test_phrases.json")
+    testdict = {}
+    #print("DEBUG: test phrases", phrases)
+    for key, value in queries.items():
+        for x in value:
+            #print("DEBUG", phrases[x])
+            x = x.strip()
+            testdict[x] = phrases[x]
+            #print("DEBUG: testdict", testdict)
+            with open('data/vocab/lipspeak/test_phrases.json', 'w') as fp:
+                json.dump(testdict, fp)
+
+    CMUwords1, phonemes1 = get_CMU_words("data/vocab/cmudict.dict")
+    with open("data/vocab/lipspeak/test_phrases.json") as f:
+        test_cases = json.load(f)
+
+    dict_lines = []
+
+    for full_phrase in test_cases:
+        for phrase_type in test_cases[full_phrase]:
+            for test_phrase in test_cases[full_phrase][phrase_type]:
+                test_phonemes = []
+                for word in test_phrase.split(" "):
+                    test_phonemes.append(" ".join(phonemes1[CMUwords1.index(word)]).replace("\n",""))
+                dict_lines.append(test_phrase.replace("_", "") + " " + " ".join(test_phonemes) + "\n")
+
+    with open("data/vocab/lipspeak/testdict.dict", "w") as f:
+        f.writelines(dict_lines)
+    logger.info(f"Finished processing phrasebook in {time.time() - tic:.3f}s")
+  
     print("Lipspeak: Resizing video")
     tic = time.time()
     video_alignment_resizing()
@@ -93,6 +137,7 @@ def predict():
     #print("DEBUG: kws_prediction is", kws_prediction)
     #encoded_img = get_response_image("data/demo/demo.png")
     #response =  { 'Status' : 'Success', 'ImageBytes': encoded_img}
+    #return jsonify({'index': 1})
     return jsonify({'index': int(kws_prediction)})
 
 def get_response_image(image_path):
@@ -254,7 +299,7 @@ def evaluation(config, logger=None):
     names = []
 
     #####EH inferece_code_block#####
-    query_words = get_CMU_words(cmu_dict_path)
+    query_words,_ = get_CMU_words(cmu_dict_path)
     results = [None] * len(Words)
     #####EH inferece_code_block#####
 
@@ -353,12 +398,16 @@ def video_alignment_resizing():
             if not still_reading:
                 video_stream.release()
                 break
-  
-            frame = Image.fromarray(frame)
-            frame = frame.rotate(-90)
-            frame = np.asarray(frame)
+
+            # no need to rotate the frame's from Lina's app                        
+            #frame = Image.fromarray(frame)
+            #frame = frame.rotate(-90)
+            #frame = np.asarray(frame)
+            # 210 572 55 417 Average area of interest from three videos lina provided
+
             try:
-                processed_frame = frame[62:640, 343:921]
+                #processed_frame = frame[62:640, 343:921]
+                processed_frame = frame[210:572, 55:417]
                 processed_frame = cv2.resize(processed_frame, (160, 160))
                 out.write(processed_frame)
             except Exception as e:
@@ -550,7 +599,7 @@ def get_CMU_words(CMU_path):
         grapheme, phoneme = line.split(" ",1)
         words.append(grapheme)
         phonemes.append(phoneme.split(" "))
-    return words
+    return words, phonemes
 
 def get_video_names(data_struct_path, split):
     with open(data_struct_path) as f:
@@ -562,7 +611,7 @@ def write_query_file(feature_dir):
         shutil.rmtree(feature_dir, ignore_errors = False)
     os.makedirs(feature_dir, exist_ok = True)
   
-    CMUwords = get_CMU_words(configdl.dict_file)
+    CMUwords,_ = get_CMU_words(configdl.dict_file)
   
     #print(f"[DEBUG] config.query_type: {configdl.query_type}")
     

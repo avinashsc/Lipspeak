@@ -1,0 +1,10 @@
+{"call an ambulance":{"1_gram":["ambulance"]},
+ "allergic to animals":{"1_gram":["animal"]},
+ "carry my groceries":{"1_gram":["grocery"]},
+ "difficulty breathing":{"1_gram":["breathe"]},
+ "problem sleeping":{"1_gram":["sleep"]},
+ "open the window":{"1_gram":["window"]},
+ "this is uncomfortable":{"1_gram":["uncomfortable"]},
+ "feel tired":{"1_gram":["tire"]},
+ "pain when swallow":{"1_gram":["swallow"]},
+ "condition improved":{"1_gram":["improve"]}}
