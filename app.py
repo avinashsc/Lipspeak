@@ -172,10 +172,10 @@ def predict():
     file = request.files['file']
     file.save('media/lipspeak/raw_videos/demo.mp4')
     #print("Lipspeak: File saved at: 'media/lipspeak/raw_videos/demo.mp4'")
-    #logger.info(f"Finished saving raw video in {time.time() - tic:.3f}s")
+    logger.info(f"Finished saving raw video in {time.time() - tic:.3f}s")
 
     #https://stackoverflow.com/questions/47679227/using-python-to-send-json-and-files-to-flask
-    #tic = time.time()
+    tic = time.time()
     print("Processing Phrasebook")
     queries = json.loads(request.form['phrasebook'])
 
@@ -207,22 +207,22 @@ def predict():
 
     with open("data/vocab/lipspeak/testdict.dict", "w") as f:
         f.writelines(dict_lines)
-    #logger.info(f"Finished processing phrasebook in {time.time() - tic:.3f}s")
+    logger.info(f"Finished processing phrasebook in {time.time() - tic:.3f}s")
   
+    tic = time.time()
     print("Lipspeak: Resizing video")
-    #tic = time.time()
     video_alignment_resizing()
-    #logger.info(f"Finished resizing video in {time.time() - tic:.3f}s")
-    #tic = time.time()
+    logger.info(f"Finished resizing video in {time.time() - tic:.3f}s")
+    tic = time.time()
     print("Lipspeak: setup generator for deep lip read")
     val_gen, val_epoch_size = setup_generators()
-    #logger.info(f"Finished extracting features in {time.time() - tic:.3f}s")
+    logger.info(f"Finished setup generator in {time.time() - tic:.3f}s")
     print("Lipspeak: Extracting features")
-    #tic = time.time()
+    tic = time.time()
     evaluate_model(val_g, val_epoch_size, chars, sess, val_gen)
-    #logger.info(f"Finished extracting features in {time.time() - tic:.3f}s")
+    logger.info(f"Finished extracting features in {time.time() - tic:.3f}s")
     print("Lipspeak: Predict using KWS")
-    #tic = time.time()    
+    tic = time.time()    
     kws_prediction = evaluation(config)
     logger.info(f"Finished evaluating KWS model in {time.time() - tic:.3f}s")    
 
