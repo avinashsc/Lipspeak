@@ -431,6 +431,7 @@ def evaluation(config, logger=None):
     #####EH inferece_code_block#####    
 
 def video_alignment_resizing():    
+    global video_len
     output_video_dir = "media/lipspeak"
     raw_video_dir = os.path.join(output_video_dir, "raw_videos")
     fourcc = cv2.VideoWriter_fourcc(*'MP4V')
@@ -455,9 +456,11 @@ def video_alignment_resizing():
                 processed_frame = frame[210:572, 55:417]
                 processed_frame = cv2.resize(processed_frame, (160, 160))
                 out.write(processed_frame)
+                video_len += 1
             except Exception as e:
                 print("DEBUG: resize error", str(e))
 
+        video_len = video_len if video_len % 2 == 0 else video_len + 1
         print(f"Saved file at: {output_video_path}")
         out.release()
 
@@ -486,7 +489,9 @@ def evaluate_model(val_g, val_epoch_size, chars, sess, val_gen):
     print("Done")
 
 def validation_loop(sess, g, n_batches, chars=None, val_gen = None, tb_writer=None):
-    
+    global video_len
+    print(f"Video length is {video_len}")
+
     Loss = []
     Cer = []
     Wer = []
@@ -517,7 +522,12 @@ def validation_loop(sess, g, n_batches, chars=None, val_gen = None, tb_writer=No
             #####EH Add code block for testing and multiple videos and saving results#####
             features_to_extract = sess.run( g.feats, feed_dict)
             features_to_extract = features_to_extract[0, :, :]
-            
+            middle_pos = features_to_extract.shape[0] // 2
+            print(f"feature length before trimming: {features_to_extract.shape[0]}")
+            features_to_extract = features_to_extract[middle_pos-video_len//2:middle_pos+video_len//2,:]
+            print(f"feature length before trimming: {features_to_extract.shape[0]}")
+
+            video_len = 0
             file_path = os.path.join(feature_dir, f"{v_names[i]}.npy")
             with open(file_path, 'wb') as f:
                 np.save(f, features_to_extract)
@@ -610,4 +620,5 @@ def write_query_file(feature_dir):
     return v_names
 
 if __name__ == '__main__':
+    video_len = 0
     app.run(host='0.0.0.0')
