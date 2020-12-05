@@ -1,6 +1,6 @@
 # LipSpeak
 ## UC Berkeley - MIDS Capstone Fall 2020
-**Using latest advances in data science, we strive to improve quality of life for people who lost their ability to speak by helping them communicate effectively**
+**Mission**: Using latest advances in data science, we strive to improve quality of life for people who lost their ability to speak by helping them communicate effectively
 
 **Team**: Lina Gurevich, Erik Hou, Avinash Chandrasekaran, Daisy Ya
 
@@ -9,8 +9,8 @@
 
 ## Contents
 * [1. Preparation](https://github.com/avinashsc/Lipspeak/#1-preparation)
-* [2. Running a Demo](https://github.com/avinashsc/Lipspeak/#2-running)
-* [3. Mobile Setup](https://github.com/avinashsc/Lipspeak/#3-mobile)
+* [2. Running a Demo](https://github.com/avinashsc/Lipspeak/#2-running-a-demo)
+* [3. Mobile Setup](https://github.com/avinashsc/Lipspeak/#3-mobile-setup)
 * [4. Citation](https://github.com/avinashsc/Lipspeak/#4-citation)
 
 
@@ -47,7 +47,7 @@ python
 * Expected output...
 
 ### 3. Mobile Setup
-For details regarding our mobile setup, please refer to [[LipSpeak App Project]](https://github.com/gurlina/LipSpeakApp)
+For details regarding our mobile setup, please refer to [LipSpeak App Project](https://github.com/gurlina/LipSpeakApp)
 
 ### 4. Citation
 If you use this code, please cite the following:
