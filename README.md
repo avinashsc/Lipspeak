@@ -1,14 +1,18 @@
 # LipSpeak
+### UC Berkeley - MIDS Capstone Fall 2020
+
 #### Using latest advances in data science, we strive to improve quality of life for people who lost their ability to speak by helping them communicate effectively
 
-[[Project page]](https://groups.ischool.berkeley.edu/LIPSPEAK/)
+Team: Lina Gurevich, Erik Hou, Avinash Chandrasekaran, Daisy Ya
+
+[[Final Project Website]](https://groups.ischool.berkeley.edu/LIPSPEAK/)
 
 
 ## Contents
 * [1. Preparation](https://github.com/avinashsc/Lipspeak/#1-preparation)
-* [2. Demo](https://youtu.be/ZKcpLItRvGI)
+* [2. Running a Demo](https://youtu.be/ZKcpLItRvGI)
 * [3. Mobile Setup](https://github.com/gurlina/LipSpeakApp)
-* [4. Citation](https://groups.ischool.berkeley.edu/LIPSPEAK/How-it-Works.html)
+* [4. Citation](https://github.com/avinashsc/Lipspeak/#4-citation)
 
 
 ### 1. Preparation
@@ -42,10 +46,10 @@ python
 
 * Expected output...
 
-### Limitations
+### 3. Limitations
 TBD ..
 
-### Citation
+### 4. Citation
 If you use this code, please cite the following:
 ```
 @misc{momeni2020seeing,
