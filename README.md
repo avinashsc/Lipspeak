@@ -1,13 +1,14 @@
 # LipSpeak
 #### Using latest advances in data science, we strive to improve quality of life for people who lost their ability to speak by helping them communicate effectively
 
-[[Project page]](https://groups.ischool.berkeley.edu/lipspeak/)
+[[Project page]](https://groups.ischool.berkeley.edu/LIPSPEAK/)
 
 
 ## Contents
-* [1. Preparation](https://github.com/lilianemomeni/KWS-Net#1-preparation)
-* [2. Demo](https://groups.ischool.berkeley.edu/lipspeak/)
-* [Citation](https://groups.ischool.berkeley.edu/lipspeak/#citation)
+* [1. Preparation](https://github.com/avinashsc/Lipspeak/#1-preparation)
+* [2. Demo](https://youtu.be/ZKcpLItRvGI)
+* [3. Mobile Setup](https://github.com/gurlina/LipSpeakApp)
+* [4. Citation](https://groups.ischool.berkeley.edu/LIPSPEAK/How-it-Works.html)
 
 
 ### 1. Preparation
@@ -15,6 +16,7 @@
 Install python dependencies by creating a new virtual environment and then running 
 
 ```
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -24,8 +26,20 @@ To verify that everything works
 
 * Run a simple demo 
 ``` bash
-python server.py
+bash misc/download_models.py
+./download_models.sh
+python app.py
 ```
+
+*In a different shell, send demo video and sample phrasebook to the server
+```bash
+python
+>>> import requests, json, os
+>>> data = {'queries': ['call an ambulance', 'difficulty breathing']}
+>>> files = {"file": (os.path.basename('./demo.mp4'),open('./demo.mp4','rb'),'application/octet-stream'),"phrasebook": (None, json.dumps(data))}
+>>> resp = requests.post("http://url-where-server-is-running.com:5000/predict",files=files) 
+```
+
 * Expected output...
 
 ### Limitations
