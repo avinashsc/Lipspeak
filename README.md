@@ -10,7 +10,7 @@
 ## Contents
 * [1. Preparation](https://github.com/avinashsc/Lipspeak/#1-preparation)
 * [2. Running a Demo](https://github.com/avinashsc/Lipspeak/#2-running-a-demo)
-* [3. Description](https://github.com/avinashsc/Lipspeak/#3-running-a-demo)
+* [3. Description](https://github.com/avinashsc/Lipspeak/#3-description))
 * [4. Mobile Setup](https://github.com/avinashsc/Lipspeak/#4-mobile-setup)
 * [5. Limitations](https://github.com/avinashsc/Lipspeak/#5-limitations)
 * [6. Citation](https://github.com/avinashsc/Lipspeak/#6-citation)
@@ -57,8 +57,10 @@ The demo video corresponds to mouthing the words "difficulty breathing". The mod
 sound "I have difficulty breathing" phrase
 
 ### 3. Description
-* The models used in our project have been trained and evaluated on [LRW and LRS datasets](http://www.robots.ox.ac.uk/~vgg/data/lip_reading/)
-* When mouthing a video through the app, the appropriate features required by the lip reading model are pre-computed and saved in ```data/lipspeak```
+* The models used in our project have been trained and evaluated on [LRW and LRS datasets](http://www.robots.ox.ac.uk/~vgg/data/lip_reading/). The pre-trained deep lip reading model can be located at ```models/lrs2_lip_model``` and the keyword-spotting model can be located at ```misc/pretrained_models```
+* When mouthing a video through the app, the appropriate features required by the lip reading model are pre-computed and saved in ```data/lipspeak```.  ```config.py``` specifies the necessary configuration setup for the lip reading model.
+* KWSNet keyword spotting model configuration is available in ```configs/demo/eval.json```
+* ```app.py``` is the python script that initializes all models & starts the flask server for backend inference task. It exposes a REST API to the mobile app, and expects the video and a user defined phrasebook as inputs. When inputs are obtained, we first extract the visual features from the video, run the keyword spotting model and compute probabilities to identify what the mouthed phrase was. This is then reported back to the app
 
 ### 4. Mobile Setup
 For details regarding our mobile setup, please refer to [LipSpeak App Project](https://github.com/gurlina/LipSpeakApp)
