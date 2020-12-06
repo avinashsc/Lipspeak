@@ -10,9 +10,9 @@
 ## Contents
 * [1. Preparation](https://github.com/avinashsc/Lipspeak/#1-preparation)
 * [2. Running a Demo](https://github.com/avinashsc/Lipspeak/#2-running-a-demo)
-* [3. Description] (https://github.com/avinashsc/Lipspeak/#3-running-a-demo)
+* [3. Description](https://github.com/avinashsc/Lipspeak/#3-running-a-demo)
 * [4. Mobile Setup](https://github.com/avinashsc/Lipspeak/#4-mobile-setup)
-* [5. Limitations] (https://github.com/avinashsc/Lipspeak/#5-limitations)
+* [5. Limitations](https://github.com/avinashsc/Lipspeak/#5-limitations)
 * [6. Citation](https://github.com/avinashsc/Lipspeak/#6-citation)
 
 
@@ -66,10 +66,10 @@ For details regarding our mobile setup, please refer to [LipSpeak App Project](h
 ### 5. Limitations
 We would like to emphasise that this research represents a working progress towards, and as such, has a few limitations that we are aware of.
 
-Homophemes - for example, the words "may", "pay", "bay" cannot be distinguished without audio as the visemes "m", "p", "b" visually look the same.
-Accents, speed of speech and mumbling which modify lip movements.
-Variable imaging conditions such as lighting, motion and resolution which modiy the appearance of the lips.
-Shorter keywords which are harder to visually spot.
+* Homophemes - for example, the words "may", "pay", "bay" cannot be distinguished without audio as the visemes "m", "p", "b" visually look the same.
+* Accents, speed of speech and mumbling which modify lip movements.
+* Variable imaging conditions such as lighting, motion and resolution which modiy the appearance of the lips.
+* Shorter keywords which are harder to visually spot.
 
 ### 6. Citation
 If you use this code, please cite the following:
