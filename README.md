@@ -1,6 +1,6 @@
 # LipSpeak
 ## UC Berkeley - MIDS Capstone Fall 2020
-**Mission**: Using latest advances in data science, we strive to improve quality of life for people who lost their ability to speak by helping them communicate effectively
+**Mission**: To improve quality of life for people who lost their ability to speak by helping them communicate effectively using latest advances in data science. 
 
 **Team**: Lina Gurevich, Erik Hou, Avinash Chandrasekaran, Daisy Ya
 
@@ -10,7 +10,7 @@
 ## Contents
 * [1. Preparation](https://github.com/avinashsc/Lipspeak/#1-preparation)
 * [2. Running a Demo](https://github.com/avinashsc/Lipspeak/#2-running-a-demo)
-* [3. Description](https://github.com/avinashsc/Lipspeak/#3-description))
+* [3. Description](https://github.com/avinashsc/Lipspeak/#3-description)
 * [4. Mobile Setup](https://github.com/avinashsc/Lipspeak/#4-mobile-setup)
 * [5. Limitations](https://github.com/avinashsc/Lipspeak/#5-limitations)
 * [6. Citation](https://github.com/avinashsc/Lipspeak/#6-citation)
@@ -63,7 +63,7 @@ sound "I have difficulty breathing" phrase
 * ```app.py``` is the python script that initializes all models & starts the flask server for backend inference task. It exposes a REST API to the mobile app, and expects the video and a user defined phrasebook as inputs. When inputs are obtained, we first extract the visual features from the video, run the keyword spotting model and compute probabilities to identify what the mouthed phrase was. This is then reported back to the app
 
 ### 4. Mobile Setup
-For details regarding our mobile setup, please refer to [LipSpeak App Project](https://github.com/gurlina/LipSpeakApp)
+For details regarding our mobile development, please refer to [LipSpeak App Project](https://github.com/gurlina/LipSpeakApp)
 
 ### 5. Limitations
 We would like to emphasise that this research represents a working progress towards, and as such, has a few limitations that we are aware of.
